@@ -1,0 +1,24 @@
+{
+  "Version": "2012-10-17",
+  "Id": "__default_policy_ID",
+  "Statement": [
+    {
+      "Sid": "__owner_statement",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::891377317326:root"
+      },
+      "Action": "SQS:*",
+      "Resource": "arn:aws:sqs:ca-central-1:891377317326:ym_video_processing"
+    },
+    {
+      "Sid": "__owner_statement",
+      "Effect": "Allow",
+      "Principal": {
+        "Service": "s3.amazonaws.com"
+      },
+      "Action": "SQS:*",
+      "Resource": "arn:aws:sqs:ca-central-1:891377317326:ym_video_processing"
+    }
+  ]
+}

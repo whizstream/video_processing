@@ -105,8 +105,9 @@ async function updateVideoStatus(videoId, status) {
 }
 
 async function updateVideoStatusPG(videoId, status) {
+  console.log('Updating video status:', videoId, status);
   return new Promise((resolve, reject) => {
-    const query = 'UPDATE videos SET status = $1 WHERE VideoID = $2';
+    const query = 'UPDATE "Videos" SET "Processing" = $1 WHERE "VideoID" = $2';
     client.query(query, [status, videoId], (error, results) => {
       if (error) {
         console.error('Error updating video status:', error);
